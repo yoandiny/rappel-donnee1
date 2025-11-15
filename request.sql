@@ -15,3 +15,8 @@ select leave.id, leave.start_date, leave.end_date , Employee.last_name, Employee
 from Leave
 join Employee on leave.employee_id = Employee.id
 join Team on Team.id = Employee.team_id
+
+# Affichez par le nombre d’employés par contract_type, vous devez afficher le type de contrat, et le nombre d’employés associés.
+
+select contract_type, count(contract_type) as number_of_employees from Employee
+ GROUP BY contract_type
